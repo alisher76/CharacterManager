@@ -9,17 +9,109 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    @IBOutlet weak var imageViewOutlet: UIImageView!
+    @IBOutlet weak var enemyHealthLabel: UILabel!
+    @IBOutlet weak var enemyMagicLabel: UILabel!
+    @IBOutlet weak var enemyWeaponLabel: UILabel!
+    @IBOutlet weak var playerHealthLabel: UILabel!
+    @IBOutlet weak var playerMagicLabel: UILabel!
+    @IBOutlet weak var playerWeaponLabel: UILabel!
+    @IBOutlet weak var playerExperienceLabel: UILabel!
+    
+    @IBOutlet weak var playerNameLabel: UILabel!
+    @IBOutlet weak var enemyNameLabel: UILabel!
+    @IBOutlet weak var playerMagicAvailabilityLabel: UILabel!
+    
+    var index = 0
+    var alisher = Character(name: "Ali", life: 100, magic: 0, experience: 0.0, weapon: Pistol())
+    var enemies: [Character] = [Character(name: "Joker", life: 100, magic: 10, experience: 50, weapon: MagicWand()), Character(name: "Clown", life: 150, magic: 0, experience: 0.0, weapon: MagicWand())]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateUI()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    
+    @IBAction func useMagicTapped(_ sender: Any) {
+        weaponOptionsTapped()
     }
-
-
+    
+    
+    @IBAction func shootButtonTapped(_ sender: Any) {
+        let gameStatus = checkTheMagicLevel(player: self.alisher)
+        self.playerMagicAvailabilityLabel.text = gameStatus
+        let enemyLife = checkLife(character: enemies[index])
+        if enemyLife == true {
+            alisher.shoot(taget: enemies[index])
+        }else{
+           index = 1
+        }
+        updateUI()
+    }
+    
+    func updateUI() {
+        OperationQueue.main.addOperation {
+        self.enemyHealthLabel.text = "\(self.enemies[self.index].life)"
+        self.enemyMagicLabel.text = "\(self.enemies[self.index].magic)"
+        self.enemyWeaponLabel.text = "MagicWand"
+        self.enemyNameLabel.text = "\(self.enemies[self.index].name)"
+        self.playerNameLabel.text = "\(self.alisher.name)"
+        self.playerMagicLabel.text = "\(self.alisher.magic)"
+        self.playerHealthLabel.text = "\(self.alisher.life)"
+        self.playerExperienceLabel.text = "\(self.alisher.experience)"
+       }
+    }
+    
+    func weaponOptionsTapped() {
+        let optionShootMenu = UIAlertController(title: nil, message: "What would you like to do?", preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "Don't Use!", style: .cancel, handler: nil)
+        optionShootMenu.addAction(cancelAction)
+        
+        let aidAction = UIAlertAction(title: "Add Health", style: .default) { (action: UIAlertAction!) -> Void in
+            let mayOrMayNot = aid(player: self.alisher)
+            if mayOrMayNot == true {
+            self.playerMagicAvailabilityLabel.text = "Health is increased!"
+            self.updateUI()
+            }else{
+            self.playerMagicAvailabilityLabel.text = "You don't Have enough Experience/Magic!"
+            }
+        }
+        let rocketAction = UIAlertAction(title: "Use Rocket to damage -50", style: .default) { (action: UIAlertAction!) -> Void in
+            let mayOrMayNot = rocket(player: self.alisher)
+            if mayOrMayNot == true {
+                self.playerMagicAvailabilityLabel.text = "Rocket is Ready!"
+                self.updateUI()
+            }else{
+                self.playerMagicAvailabilityLabel.text = "You don't Have enough Experience/Magic!"
+            }
+        }
+        let magicWandAction = UIAlertAction(title: "Use Magic Wand to damage -5", style: .default) { (action: UIAlertAction!) -> Void in
+            let mayOrMayNot = magicWand(player: self.alisher)
+            if mayOrMayNot == true {
+                self.playerMagicAvailabilityLabel.text = "Use the MagicWand Boy!"
+                self.updateUI()
+            }else{
+                self.playerMagicAvailabilityLabel.text = "You don't Have enough Experience/Magic!"
+            }
+        }
+        let shotgunAction = UIAlertAction(title: "get shotgun to damage -10", style: .default) { (action: UIAlertAction!) -> Void in
+            let mayOrMayNot = shotgun(player: self.alisher)
+            if mayOrMayNot == true {
+                self.playerMagicAvailabilityLabel.text = "Use the Shotgun Man!"
+                self.updateUI()
+            }else{
+                self.playerMagicAvailabilityLabel.text = "You don't Have enough Experience/Magic!"
+            }
+        }
+        optionShootMenu.addAction(rocketAction)
+        optionShootMenu.addAction(shotgunAction)
+        optionShootMenu.addAction(magicWandAction)
+        optionShootMenu.addAction(aidAction)
+        present(optionShootMenu, animated: true, completion: nil)
+        
+    }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC25BACF1EC62CE5006091BE /* Weapons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BACE1EC62CE5006091BE /* Weapons.swift */; };
+		AC25BAD11EC632DD006091BE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25BAD01EC632DD006091BE /* Model.swift */; };
 		AC39A1451EB0B7CF00BE3D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39A1441EB0B7CF00BE3D24 /* AppDelegate.swift */; };
 		AC39A1471EB0B7CF00BE3D24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39A1461EB0B7CF00BE3D24 /* ViewController.swift */; };
 		AC39A14A1EB0B7CF00BE3D24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC39A1481EB0B7CF00BE3D24 /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		AC39A14F1EB0B7CF00BE3D24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC39A14D1EB0B7CF00BE3D24 /* LaunchScreen.storyboard */; };
 		AC39A15A1EB0B7CF00BE3D24 /* CharacterModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39A1591EB0B7CF00BE3D24 /* CharacterModelTests.swift */; };
 		AC39A1651EB0B7CF00BE3D24 /* CharacterModelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39A1641EB0B7CF00BE3D24 /* CharacterModelUITests.swift */; };
+		AC39A1731EB0B7E100BE3D24 /* CharacterClassFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39A1721EB0B7E100BE3D24 /* CharacterClassFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC25BACE1EC62CE5006091BE /* Weapons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapons.swift; sourceTree = "<group>"; };
+		AC25BAD01EC632DD006091BE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AC39A1411EB0B7CF00BE3D24 /* CharacterModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharacterModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC39A1441EB0B7CF00BE3D24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC39A1461EB0B7CF00BE3D24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		AC39A1601EB0B7CF00BE3D24 /* CharacterModelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharacterModelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC39A1641EB0B7CF00BE3D24 /* CharacterModelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModelUITests.swift; sourceTree = "<group>"; };
 		AC39A1661EB0B7CF00BE3D24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC39A1721EB0B7E100BE3D24 /* CharacterClassFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterClassFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			children = (
 				AC39A1441EB0B7CF00BE3D24 /* AppDelegate.swift */,
 				AC39A1461EB0B7CF00BE3D24 /* ViewController.swift */,
+				AC25BAD01EC632DD006091BE /* Model.swift */,
+				AC39A1721EB0B7E100BE3D24 /* CharacterClassFile.swift */,
+				AC25BACE1EC62CE5006091BE /* Weapons.swift */,
 				AC39A1481EB0B7CF00BE3D24 /* Main.storyboard */,
 				AC39A14B1EB0B7CF00BE3D24 /* Assets.xcassets */,
 				AC39A14D1EB0B7CF00BE3D24 /* LaunchScreen.storyboard */,
@@ -262,6 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC25BAD11EC632DD006091BE /* Model.swift in Sources */,
+				AC39A1731EB0B7E100BE3D24 /* CharacterClassFile.swift in Sources */,
+				AC25BACF1EC62CE5006091BE /* Weapons.swift in Sources */,
 				AC39A1471EB0B7CF00BE3D24 /* ViewController.swift in Sources */,
 				AC39A1451EB0B7CF00BE3D24 /* AppDelegate.swift in Sources */,
 			);
@@ -514,6 +526,7 @@
 				AC39A16B1EB0B7CF00BE3D24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC39A16C1EB0B7CF00BE3D24 /* Build configuration list for PBXNativeTarget "CharacterModelTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +535,7 @@
 				AC39A16E1EB0B7CF00BE3D24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC39A16F1EB0B7CF00BE3D24 /* Build configuration list for PBXNativeTarget "CharacterModelUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +544,7 @@
 				AC39A1711EB0B7CF00BE3D24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
