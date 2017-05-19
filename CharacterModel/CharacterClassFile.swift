@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 protocol Targetable {
     var life: Int { get set }
     func doDamage(damage: Int)
     func useMagic(magicAmount: Int)
+    
 }
 
 protocol Shootable {
@@ -44,13 +46,15 @@ class Character: Targetable {
     var life: Int
     var magic: Int
     var experience: Double
+    var image: UIImage?
     
-    init(name: String, life: Int, magic: Int, experience: Double, weapon: Shootable) {
+    init(name: String, life: Int, magic: Int, experience: Double, weapon: Shootable, image: UIImage?) {
         self.name = name
         self.life = life
         self.magic = magic
         self.experience = experience
         self.weapon = weapon
+        self.image = image
     }
     
 }

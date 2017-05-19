@@ -25,15 +25,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerMagicAvailabilityLabel: UILabel!
     
     var index = 0
-    var alisher = Character(name: "Ali", life: 100, magic: 0, experience: 0.0, weapon: Pistol())
-    var enemies: [Character] = [Character(name: "Joker", life: 100, magic: 10, experience: 50, weapon: MagicWand()), Character(name: "Clown", life: 150, magic: 0, experience: 0.0, weapon: MagicWand())]
+    var moves = 0
+    var turn: Bool = true
+    var enemyWeapon = "Pistol"
+    var alisher = Character(name: "Ali", life: 150, magic: 5, experience: 0.0, weapon: Pistol(), image: nil)
+    var enemies: [Character] = [Character(name: "Clown", life: 150, magic: 0, experience: 0.0, weapon: MagicWand(), image: UIImage(named: "clown")!), Character(name: "Joker", life: 200, magic: 10, experience: 50, weapon: MagicWand(), image: UIImage(named: "joker")!)]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
     }
     
-    
+
     
     @IBAction func useMagicTapped(_ sender: Any) {
         weaponOptionsTapped()
@@ -41,11 +44,20 @@ class ViewController: UIViewController {
     
     
     @IBAction func shootButtonTapped(_ sender: Any) {
+        
+        if moves == 2  {
+            playerMagicLabel.text = "\(enemies[index].name) is attacking!"
+            backFire(enemy: enemies[index])
+            moves = 0
+        }
         let gameStatus = checkTheMagicLevel(player: self.alisher)
         self.playerMagicAvailabilityLabel.text = gameStatus
         let enemyLife = checkLife(character: enemies[index])
         if enemyLife == true {
-            alisher.shoot(taget: enemies[index])
+            if turn == true {
+                alisher.shoot(taget: enemies[index])
+                moves += 1
+            }
         }else{
            index = 1
         }
@@ -56,8 +68,9 @@ class ViewController: UIViewController {
         OperationQueue.main.addOperation {
         self.enemyHealthLabel.text = "\(self.enemies[self.index].life)"
         self.enemyMagicLabel.text = "\(self.enemies[self.index].magic)"
-        self.enemyWeaponLabel.text = "MagicWand"
+        self.enemyWeaponLabel.text = self.enemyWeapon
         self.enemyNameLabel.text = "\(self.enemies[self.index].name)"
+        self.imageViewOutlet.image = self.enemies[self.index].image
         self.playerNameLabel.text = "\(self.alisher.name)"
         self.playerMagicLabel.text = "\(self.alisher.magic)"
         self.playerHealthLabel.text = "\(self.alisher.life)"
@@ -112,6 +125,31 @@ class ViewController: UIViewController {
         optionShootMenu.addAction(aidAction)
         present(optionShootMenu, animated: true, completion: nil)
         
+    }
+    
+    func backFire(enemy: Character) {
+        
+        
+        enemy.shoot(taget: alisher)
+        
+        switch enemy.magic {
+        case  0..<20:
+            enemy.weapon = Pistol()
+            enemyWeapon = "Pistol🔫"
+        case  20..<40:
+            enemy.weapon = MagicWand()
+            enemyWeapon = "MagicWund"
+        case  40..<60:
+            enemy.weapon = Shotgun()
+           enemyWeapon = "Shotgun😱"
+        case  60..<100:
+            enemy.weapon = Rocket()
+            enemyWeapon = "Pistol🚀"
+        default:
+            enemy.weapon = Pistol()
+        }
+        
+        turn = true
     }
 }
 

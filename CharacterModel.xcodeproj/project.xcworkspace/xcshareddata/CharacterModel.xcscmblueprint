@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5E650AB28AC02C2CE8CD3ADE5647FBEC42A12398",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5E650AB28AC02C2CE8CD3ADE5647FBEC42A12398" : 9223372036854775807,
+    "1378006460B7A96BD109C756535C75F343B05BD3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2A9FE177-EE0D-4973-B562-C05C84804DC4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5E650AB28AC02C2CE8CD3ADE5647FBEC42A12398" : "CharacterModel\/",
+    "1378006460B7A96BD109C756535C75F343B05BD3" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CharacterModel",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CharacterModel.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:alisher76\/GamePieceMoves.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1378006460B7A96BD109C756535C75F343B05BD3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:alisher76\/CharacterManager.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5E650AB28AC02C2CE8CD3ADE5647FBEC42A12398"
+    }
+  ]
+}

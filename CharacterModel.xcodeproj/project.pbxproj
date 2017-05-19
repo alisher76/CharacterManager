@@ -17,6 +17,7 @@
 		AC39A15A1EB0B7CF00BE3D24 /* CharacterModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39A1591EB0B7CF00BE3D24 /* CharacterModelTests.swift */; };
 		AC39A1651EB0B7CF00BE3D24 /* CharacterModelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39A1641EB0B7CF00BE3D24 /* CharacterModelUITests.swift */; };
 		AC39A1731EB0B7E100BE3D24 /* CharacterClassFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39A1721EB0B7E100BE3D24 /* CharacterClassFile.swift */; };
+		ACDB11BA1ECF894100CA1309 /* CharacterManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDB11B91ECF894100CA1309 /* CharacterManagerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		AC39A1641EB0B7CF00BE3D24 /* CharacterModelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModelUITests.swift; sourceTree = "<group>"; };
 		AC39A1661EB0B7CF00BE3D24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC39A1721EB0B7E100BE3D24 /* CharacterClassFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterClassFile.swift; sourceTree = "<group>"; };
+		ACDB11B91ECF894100CA1309 /* CharacterManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterManagerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				AC39A1441EB0B7CF00BE3D24 /* AppDelegate.swift */,
 				AC39A1461EB0B7CF00BE3D24 /* ViewController.swift */,
+				ACDB11B91ECF894100CA1309 /* CharacterManagerViewController.swift */,
 				AC25BAD01EC632DD006091BE /* Model.swift */,
 				AC39A1721EB0B7E100BE3D24 /* CharacterClassFile.swift */,
 				AC25BACE1EC62CE5006091BE /* Weapons.swift */,
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDB11BA1ECF894100CA1309 /* CharacterManagerViewController.swift in Sources */,
 				AC25BAD11EC632DD006091BE /* Model.swift in Sources */,
 				AC39A1731EB0B7E100BE3D24 /* CharacterClassFile.swift in Sources */,
 				AC25BACF1EC62CE5006091BE /* Weapons.swift in Sources */,

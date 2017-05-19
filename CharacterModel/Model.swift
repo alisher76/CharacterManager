@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+var reference: ViewController!
+
 func aid(player: Character) -> Bool? {
     
     if player.magic >= 25 {
@@ -66,6 +68,8 @@ func checkLife(character: Character) -> Bool {
         return true
     }
 }
+
+
 
 func checkTheMagicLevel(player: Character) -> String {
     var back: String = "Battle is on"
