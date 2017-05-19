@@ -14,6 +14,7 @@ class CharacterManagerViewController: UIViewController {
     @IBOutlet var healthLabel: UILabel!
     
     @IBOutlet var magicLabel: UILabel!
+    @IBOutlet var maxLifeLimitLabel: UILabel!
     
     @IBOutlet var experienceLabel: UILabel!
     
@@ -23,7 +24,7 @@ class CharacterManagerViewController: UIViewController {
     
     var ali = Character(name: "Ali", life: 100, magic: 0, experience: 0.0, weapon: Pistol(), image: UIImage(named: "pizza")!)
     
-    
+    var limit: Int = 100
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,9 +37,10 @@ class CharacterManagerViewController: UIViewController {
         let isDead = checkDeadOrAlive()
         if isDead == false{
             ali.life += 1
+            upgradeLife()
             upgrade()
-            if ali.life >= 100 {
-                ali.life = 100
+            if ali.life >= limit {
+                ali.life = limit
             }
             updateUI()
         }
@@ -50,9 +52,10 @@ class CharacterManagerViewController: UIViewController {
         let isDead = checkDeadOrAlive()
         if isDead == false{
             ali.life += 10
+            upgradeLife()
             upgrade()
-            if ali.life >= 100 {
-                ali.life = 100
+            if ali.life >= limit {
+                ali.life = limit
             }
             updateUI()
         }
@@ -65,7 +68,6 @@ class CharacterManagerViewController: UIViewController {
             backgroundImageView.image = ali.image
         }else {
             ali.life -= 1
-            
             updateUI()
         }
     }
@@ -85,14 +87,15 @@ class CharacterManagerViewController: UIViewController {
         healthLabel.text = "\(ali.life)"
         magicLabel.text =  "\(ali.magic)"
         experienceLabel.text = "\(ali.experience)"
+        maxLifeLimitLabel.text = "Max:\(limit)"
     }
     
     func upgrade() {
-        if ali.life >= 100 {
-           ali.life = 100
+        if ali.life >= limit {
+           ali.life = limit
            updateUI()
         }else{
-            ali.experience += 5
+            ali.experience += 10
             if ali.experience >= 200.0 {
                 ali.experience = 200.0
             }
@@ -114,4 +117,16 @@ class CharacterManagerViewController: UIViewController {
         }
         
     }
+    
+    func upgradeLife() {
+        if ali.experience >= 70 && ali.experience <= 99 {
+            limit = 150
+            updateUI()
+        }else if ali.experience >= 100 {
+            limit = 200
+            updateUI()
+        }
+    }
+    
+    
 }

@@ -471,6 +471,7 @@
                         <outlet property="experienceLabel" destination="jYC-bC-7lx" id="47K-ME-mO2"/>
                         <outlet property="healthLabel" destination="RZU-Qi-lbR" id="CCm-kL-IpC"/>
                         <outlet property="magicLabel" destination="9iK-Jt-6RB" id="eE3-8d-QFb"/>
+                        <outlet property="maxLifeLimitLabel" destination="rAz-ih-5Lu" id="qve-za-uU8"/>
                         <outlet property="statusLabel" destination="rqL-Ws-Eca" id="zCx-wn-5OQ"/>
                     </connections>
                 </viewController>
