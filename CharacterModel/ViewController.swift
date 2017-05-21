@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         updateUI()
     }
     
-
+    
     
     @IBAction func useMagicTapped(_ sender: Any) {
         weaponOptionsTapped()
@@ -59,23 +59,23 @@ class ViewController: UIViewController {
                 moves += 1
             }
         }else{
-           index = 1
+            index = 1
         }
         updateUI()
     }
     
     func updateUI() {
         OperationQueue.main.addOperation {
-        self.enemyHealthLabel.text = "\(self.enemies[self.index].life)"
-        self.enemyMagicLabel.text = "\(self.enemies[self.index].magic)"
-        self.enemyWeaponLabel.text = self.enemyWeapon
-        self.enemyNameLabel.text = "\(self.enemies[self.index].name)"
-        self.imageViewOutlet.image = self.enemies[self.index].image
-        self.playerNameLabel.text = "\(self.alisher.name)"
-        self.playerMagicLabel.text = "\(self.alisher.magic)"
-        self.playerHealthLabel.text = "\(self.alisher.life)"
-        self.playerExperienceLabel.text = "\(self.alisher.experience)"
-       }
+            self.enemyHealthLabel.text = "\(self.enemies[self.index].life)"
+            self.enemyMagicLabel.text = "\(self.enemies[self.index].magic)"
+            self.enemyWeaponLabel.text = self.enemyWeapon
+            self.enemyNameLabel.text = "\(self.enemies[self.index].name)"
+            self.imageViewOutlet.image = self.enemies[self.index].image
+            self.playerNameLabel.text = "\(self.alisher.name)"
+            self.playerMagicLabel.text = "\(self.alisher.magic)"
+            self.playerHealthLabel.text = "\(self.alisher.life)"
+            self.playerExperienceLabel.text = "\(self.alisher.experience)"
+        }
     }
     
     func weaponOptionsTapped() {
@@ -86,10 +86,10 @@ class ViewController: UIViewController {
         let aidAction = UIAlertAction(title: "Add Health", style: .default) { (action: UIAlertAction!) -> Void in
             let mayOrMayNot = aid(player: self.alisher)
             if mayOrMayNot == true {
-            self.playerMagicAvailabilityLabel.text = "Health is increased!"
-            self.updateUI()
+                self.playerMagicAvailabilityLabel.text = "Health is increased!"
+                self.updateUI()
             }else{
-            self.playerMagicAvailabilityLabel.text = "You don't Have enough Experience/Magic!"
+                self.playerMagicAvailabilityLabel.text = "You don't Have enough Experience/Magic!"
             }
         }
         let rocketAction = UIAlertAction(title: "Use Rocket to damage -50", style: .default) { (action: UIAlertAction!) -> Void in
@@ -141,7 +141,7 @@ class ViewController: UIViewController {
             enemyWeapon = "MagicWund"
         case  40..<60:
             enemy.weapon = Shotgun()
-           enemyWeapon = "Shotgun😱"
+            enemyWeapon = "Shotgun😱"
         case  60..<100:
             enemy.weapon = Rocket()
             enemyWeapon = "Pistol🚀"

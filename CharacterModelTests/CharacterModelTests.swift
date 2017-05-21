@@ -33,4 +33,47 @@ class CharacterModelTests: XCTestCase {
         }
     }
     
+    func testJsonObject() {
+      let ali = Character(name: "Ali", life: 100, magic: 0, experience: 0.0, weapon: Pistol(), image: UIImage(named: "pizza")!)
+      let result = ali.jsonObject
+        
+        if let resultName = result["name"] as? String,
+           let resultLife = result["life"] as? Int,
+           let resultMagic = result["magic"] as? Int,
+           let resultExperience = result["experience"] as? Double,
+           let resultImage = result["image"] as? UIImage {
+            
+            
+            XCTAssertEqual(resultName, "Ali")
+            XCTAssertEqual(resultLife, 100)
+            XCTAssertEqual(resultMagic, 0)
+            XCTAssertEqual(resultExperience, 0.0)
+            XCTAssertEqual(resultImage, UIImage(named: "pizza")!)
+            
+        }
+        
+    }
+    
+    func testJsonObject2() {
+        let bob = Character(name: "BoB", life: 200, magic: 0, experience: 0.0, weapon: Pistol(), image: UIImage(named: "joker")!)
+        let result = bob.jsonObject
+        
+        if let resultName = result["name"] as? String,
+            let resultLife = result["life"] as? Int,
+            let resultMagic = result["magic"] as? Int,
+            let resultExperience = result["experience"] as? Double,
+            let resultImage = result["image"] as? UIImage {
+            
+            
+            XCTAssertEqual(resultName, "BoB")
+            XCTAssertEqual(resultLife, 200)
+            XCTAssertEqual(resultMagic, 0)
+            XCTAssertEqual(resultExperience, 0.0)
+            XCTAssertEqual(resultImage, UIImage(named: "joker")!)
+            
+        }
+    }
+    
+    
+    
 }

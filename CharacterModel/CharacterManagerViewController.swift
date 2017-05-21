@@ -38,7 +38,6 @@ class CharacterManagerViewController: UIViewController {
         if isDead == false{
             ali.life += 1
             upgradeLife()
-            upgrade()
             if ali.life >= limit {
                 ali.life = limit
             }
@@ -53,7 +52,6 @@ class CharacterManagerViewController: UIViewController {
         if isDead == false{
             ali.life += 10
             upgradeLife()
-            upgrade()
             if ali.life >= limit {
                 ali.life = limit
             }
@@ -90,22 +88,7 @@ class CharacterManagerViewController: UIViewController {
         maxLifeLimitLabel.text = "Max:\(limit)"
     }
     
-    func upgrade() {
-        if ali.life >= limit {
-           ali.life = limit
-           updateUI()
-        }else{
-            ali.experience += 10
-            if ali.experience >= 200.0 {
-                ali.experience = 200.0
-            }
-            ali.magic += 2
-            if ali.magic >= 200{
-                ali.magic = 200
-            }
-            updateUI()
-        }
-    }
+    
     
     func checkDeadOrAlive() -> Bool {
         if ali.life <= 0 {
@@ -113,7 +96,7 @@ class CharacterManagerViewController: UIViewController {
             backgroundImageView.image = ali.image
             return true
         }else{
-        return false
+            return false
         }
         
     }

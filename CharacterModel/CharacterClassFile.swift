@@ -57,9 +57,52 @@ class Character: Targetable {
         self.image = image
     }
     
+    ///JSONSerilization is needed
+    
 }
 
 
-
+extension Character {
+    
+    convenience init?(jsonObject: [String:Any]) {
+        guard let name = jsonObject[Character.nameKey] as? String,
+            let life = jsonObject[Character.lifeKey] as? Int,
+            let magic = jsonObject[Character.magicKey] as? Int,
+            let experience = jsonObject[Character.experienceKey] as? Double,
+            let weapon = jsonObject[Character.weaponKey] as? Shootable,
+            let image = jsonObject[Character.imageKey] as? UIImage
+            else {
+                return nil
+        }
+        
+        self.init(name: name,
+                  life: life,
+                  magic: magic,
+                  experience:experience,
+                  weapon: weapon,
+                  image:image)
+        
+    }
+    
+    var jsonObject: [String:Any] {
+        
+        let back: [String:Any] = [
+            Character.nameKey:name,
+            Character.lifeKey:life,
+            Character.magicKey:magic,
+            Character.experienceKey:experience,
+            Character.weaponKey: weapon,
+            Character.imageKey: image
+        ]
+        return back
+    }
+    
+    internal static var nameKey: String = "name"
+    internal static var lifeKey: String = "life"
+    internal static var magicKey: String = "magic"
+    internal static var experienceKey: String = "experience"
+    internal static var weaponKey: String = "weapon"
+    internal static var imageKey: String = "image"
+}
 
 

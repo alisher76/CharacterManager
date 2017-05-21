@@ -60,7 +60,6 @@ func magicWand(player: Character) -> Bool {
 }
 
 
-
 func checkLife(character: Character) -> Bool {
     if character.life <= 0 {
         return false
@@ -68,8 +67,6 @@ func checkLife(character: Character) -> Bool {
         return true
     }
 }
-
-
 
 func checkTheMagicLevel(player: Character) -> String {
     var back: String = "Battle is on"
@@ -86,7 +83,7 @@ func checkTheMagicLevel(player: Character) -> String {
         back = "Rocket is Available"
         return back
     }else{
-    return back
+        return back
     }
 }
 
